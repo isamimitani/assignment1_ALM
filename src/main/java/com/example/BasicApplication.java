@@ -75,8 +75,99 @@ public class BasicApplication {
                 if(getAllNames.equals("t")){
 //                    System.out.println("find");
                     JSONArray temperature = parameters.getJSONObject(i).getJSONArray("values");                    
-                    System.out.println(temperature.get(0) + "C");
-                }               
+                    System.out.print(temperature.get(0) + "C. Weather will be ");
+                }
+                if(getAllNames.equals("Wsymb2")){
+                    JSONArray symble = parameters.getJSONObject(i).getJSONArray("values");  
+                    int symbleNum = (Integer) symble.get(0);
+                    showSymble(symbleNum);
+                }
+            }
+        }
+        
+        private void showSymble(int num){
+            switch(num){
+                case 1:
+                    System.out.println("Clear sky.");
+                    break;
+                case 2:
+                    System.out.println("Nearly clear sky.");
+                    break;
+                case 3:
+                    System.out.println("Variable cloudiness.");
+                    break;
+                case 4:
+                    System.out.println("Variable cloudiness.");
+                    break;
+                case 5:
+                    System.out.println("Cloudy sky.");
+                    break;
+                case 6:
+                    System.out.println("Overcast.");
+                    break;
+                case 7:
+                    System.out.println("Fog.");
+                    break;
+                case 8:
+                    System.out.println("Light rain showers.");
+                    break;
+                case 9:
+                    System.out.println("Moderate rain showers.");
+                    break;
+                case 10:
+                    System.out.println("Heavy rain showers.");
+                    break;
+                case 11:
+                    System.out.println("Thunderstorm.");
+                    break;
+                case 12:
+                    System.out.println("Light sleet showers.");
+                    break;
+                case 13:
+                    System.out.println("Moderate sleet showers.");
+                    break;
+                case 14:
+                    System.out.println("Heavy sleet showers.");
+                    break;
+                case 15:
+                    System.out.println("Light snow showers.");
+                    break;
+                case 16:
+                    System.out.println("Moderate snow showers.");
+                    break;
+                case 17:
+                    System.out.println("Heavy snow showers.");
+                    break;
+                case 18:
+                    System.out.println("Light rain.");
+                    break;
+                case 19:
+                    System.out.println("Moderate rain.");
+                    break;
+                case 20:
+                    System.out.println("Heavy rain.");
+                    break;
+                case 21:
+                    System.out.println("Thunder.");
+                    break;
+                case 22:
+                    System.out.println("Thunder.");
+                    break;
+                case 23:
+                    System.out.println("Moderate sleet.");
+                    break;
+                case 24:
+                    System.out.println("Heavy sleet.");
+                    break;
+                case 25:
+                    System.out.println("Light snowfall.");
+                    break;
+                case 26:
+                    System.out.println("Moderate snowfall.");
+                    break;
+                case 27:
+                    System.out.println("Heavy snowfall.");
+                    break;                    
             }
         }
 }
