@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import org.json.*;
+import org.springframework.boot.configurationprocessor.json.JSONException;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 
 @SpringBootApplication
 public class BasicApplication {
@@ -40,8 +43,7 @@ public class BasicApplication {
                 return res;
         }
         
-        public void showResult(String res){
-//            Object obj = JSON.parse(res);
-            System.out.println("weather");
+        public void showResult(String res) throws JSONException{
+            JSONObject obj = new JSONObject(res);
         }
 }
