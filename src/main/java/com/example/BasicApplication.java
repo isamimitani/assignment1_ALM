@@ -2,9 +2,6 @@ package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
@@ -29,8 +26,24 @@ public class BasicApplication {
         }
         
         public String getWetherForecast(int numberOfTown){
+            double latitude = 59.334591;
+            double longitude = 18.063240;
+            switch(numberOfTown){
+                case 1:
+                    latitude = Town.STOCKHOLM.latitude();
+                    longitude = Town.STOCKHOLM.longitude();
+                    break;
+                case 2:
+                    latitude = Town.GOTHENBURG.latitude();
+                    longitude = Town.GOTHENBURG.longitude();
+                    break;
+                case 3:
+                    latitude = Town.MALMO.latitude();
+                    longitude = Town.MALMO.longitude();
+                    break;
+            }
                 RestTemplate restTemplate = new RestTemplate();
-                String url = "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json";
+                String url = "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/" +  longitude + "/lat/" + latitude + "/data.json";
                 String res = restTemplate.getForObject(url, String.class);
                 System.out.println(res);
                 return res;
