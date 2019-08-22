@@ -20,7 +20,7 @@ public class BasicApplication {
 	}
         
         public static void showMessage(){
-            System.out.println("Choose a number.");
+            System.out.println("Choose a number to show weather condition.");
             System.out.println("1.Stockholm");
             System.out.println("2.Göteorg");
             System.out.println("3.Malmö");
