@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Scanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -24,8 +25,14 @@ public class BasicApplication {
         }
         
         public int getUserInput(){
-            
-            return 0;
+            Scanner myscan = new Scanner(System.in);
+            System.out.println("Enter the number of your city: ");
+            while (!myscan.hasNextInt()) {
+                System.out.println("Invalid number, input again.");
+                myscan.next(); 
+            }
+            int citynumber = myscan.nextInt();                    
+            return citynumber;
         }
         
         public String getWetherForecast(int numberOfTown){
