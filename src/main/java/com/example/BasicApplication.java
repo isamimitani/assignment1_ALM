@@ -1,5 +1,6 @@
 package com.example;
 
+import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -40,6 +41,7 @@ public class BasicApplication {
         }
         
         public void showResult(String res){
-            
+//            Object obj = JSON.parse(res);
+            System.out.println("weather");
         }
 }
