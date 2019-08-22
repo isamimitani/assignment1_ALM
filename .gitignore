@@ -1,0 +1,4 @@
+/target/
+target/
+target/classes/com/example/BasicApplication.class
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
