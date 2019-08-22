@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 /target/
+=======
+target/
+target/classes/com/example/BasicApplication.class
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+>>>>>>> 7480a1c5d6b835160cb843cd44f5a728df501f59
