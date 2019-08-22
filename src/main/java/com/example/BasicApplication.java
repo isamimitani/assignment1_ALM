@@ -12,6 +12,6 @@ public class BasicApplication {
                 RestTemplate restTemplate = new RestTemplate();
                  //omvandla från JSON:
                 //String res = restTemplate.getForObject("https://gturnquist-quoters.cfapps.io/api/random");
-                //System.out.println(res);
+                System.out.println("Julia");
 	}
 }
