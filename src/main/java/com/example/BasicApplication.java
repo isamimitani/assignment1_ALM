@@ -25,10 +25,12 @@ public class BasicApplication {
 	}
         
         public static void showMessage(){
+            System.out.println("*********************************************");
             System.out.println("Choose a number to show weather condition.");
             System.out.println("1.Stockholm");
             System.out.println("2.Göteborg");
             System.out.println("3.Malmö");
+            System.out.println("*********************************************");
         }
         
         public int getUserInput(){
