@@ -15,10 +15,13 @@ public class BasicApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(BasicApplication.class, args);
                 BasicApplication app = new BasicApplication();
-                app.showMessage();
-                int num = app.getUserInput();
-                String res = app.getWetherForecast(num);
-                app.showResult(res);
+                
+                while(true){
+                    app.showMessage();
+                    int num = app.getUserInput();
+                    String res = app.getWetherForecast(num);
+                    app.showResult(res);
+                }
 	}
         
         public static void showMessage(){
@@ -62,7 +65,6 @@ public class BasicApplication {
                 RestTemplate restTemplate = new RestTemplate();
                 String url = "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/" +  longitude + "/lat/" + latitude + "/data.json";
                 String res = restTemplate.getForObject(url, String.class);
-//                System.out.println(res);
                 return res;
         }
         
@@ -73,7 +75,6 @@ public class BasicApplication {
             for(int i=0; i<parameters.length(); i++){
                 String getAllNames = parameters.getJSONObject(i).getString("name");
                 if(getAllNames.equals("t")){
-//                    System.out.println("find");
                     JSONArray temperature = parameters.getJSONObject(i).getJSONArray("values");                    
                     System.out.print(temperature.get(0) + "C. Weather will be ");
                 }
