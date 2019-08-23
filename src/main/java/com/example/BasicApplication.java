@@ -25,20 +25,34 @@ public class BasicApplication {
 	}
         
         public static void showMessage(){
+            System.out.println("*********************************************");
             System.out.println("Choose a number to show weather condition.");
             System.out.println("1.Stockholm");
             System.out.println("2.Göteborg");
             System.out.println("3.Malmö");
+            System.out.println("*********************************************");
         }
         
         public int getUserInput(){
+            boolean validNum = false;
+            int citynumber = 0;
             Scanner myscan = new Scanner(System.in);
             System.out.println("Enter the number of your city: ");
-            while (!myscan.hasNextInt()) {
-                System.out.println("Invalid number, input again.");
-                myscan.next(); 
+            while(!validNum){
+                if (!myscan.hasNextInt()) {
+                    System.out.println("Invalid number, input again.");
+                    myscan.next(); 
+                } else {
+                    citynumber = myscan.nextInt();  
+                    if(citynumber>3 || citynumber<=0){
+                        System.out.println("Invalid number, input again.");
+                    } else {
+                        validNum = true;
+                    }
+                    
+                }
+                
             }
-            int citynumber = myscan.nextInt();                    
             return citynumber;
         }
         
